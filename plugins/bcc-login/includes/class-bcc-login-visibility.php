@@ -295,7 +295,7 @@ class BCC_Login_Visibility {
     /**
      * @return int
      */
-    private function get_current_user_level() {
+    public function get_current_user_level() {
         $user  = wp_get_current_user();
 
         foreach ( $this->levels as $role => $level ) {
@@ -346,11 +346,11 @@ class BCC_Login_Visibility {
      * @param int      $id      Nav menu ID.
      */
     function on_render_menu_item( $item_id, $item, $depth, $args, $id ) {
-        if ( $item->type != 'custom' ) {
-            // This only applies to custom menu items because items for posts
-            // and pages are controlled by the post meta for the particular post.
-            return;
-        }
+//        if ( $item->type != 'custom' ) {
+//            // This only applies to custom menu items because items for posts
+//            // and pages are controlled by the post meta for the particular post.
+//            return;
+//        }
         $visibility = (int) get_post_meta( $item_id, 'bcc_login_visibility', true );
         if ( empty( $visibility ) ) {
             $visibility = self::VISIBILITY_DEFAULT;

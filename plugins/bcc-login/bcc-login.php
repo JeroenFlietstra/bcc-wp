@@ -37,7 +37,7 @@ class BCC_Login {
     private BCC_Login_Endpoints $_endpoints;
     private BCC_Login_Client $_client;
     private BCC_Login_Users $_users;
-    private BCC_Login_Visibility $_visibility;
+    public BCC_Login_Visibility $_visibility;
     private BCC_Login_Widgets $_widgets;
     private BCC_Login_Feed $_feed;
     private BCC_Login_Updater $_updater;
