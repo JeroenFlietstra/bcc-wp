@@ -42,7 +42,7 @@ class BCC_Login_Updater {
 		if( false === $remote || ! $this->cache_allowed ) {
 
 			$remote = wp_remote_get(
-				'https://raw.githubusercontent.com/bcc-code/bcc-wp/master/plugins/' . $this->plugin_slug . '/package.json',
+				'https://raw.githubusercontent.com/jeroenflietstra/bcc-wp/master/plugins/' . $this->plugin_slug . '/package.json',
 				array(
 					'timeout' => 10,
 					'headers' => array(
@@ -101,7 +101,7 @@ class BCC_Login_Updater {
 		$res->requires = $remote->requires;
 		$res->author = $remote->author;
 		$res->author_profile = "https://github.com/bcc-code"; //$remote->author_profile;
-		$res->download_link = "https://github.com/bcc-code/bcc-wp/releases/download/" . $this->plugin_slug . "-v" . $remote->version . "/" . $this->plugin_slug . ".zip"; //$remote->download_url;
+		$res->download_link = "https://github.com/jeroenflietstra/bcc-wp/releases/download/" . $this->plugin_slug . "-v" . $remote->version . "/" . $this->plugin_slug . ".zip"; //$remote->download_url;
 		$res->trunk = $res->download_link; // $remote->download_url;
 		$res->requires_php = $remote->requires_php;
 		$res->last_updated = $remote->last_updated;
@@ -137,7 +137,7 @@ class BCC_Login_Updater {
 		$res->plugin = $this->plugin; 
 		$res->new_version = $this->version;
 		$res->tested = null;
-		$res->package = "https://github.com/bcc-code/bcc-wp/releases/download/" . $this->plugin_slug . "-v" . $this->version . "/" . $this->plugin_slug . ".zip"; //$remote->download_url;
+		$res->package = "https://github.com/jeroenflietstra/bcc-wp/releases/download/" . $this->plugin_slug . "-v" . $this->version . "/" . $this->plugin_slug . ".zip"; //$remote->download_url;
 
 		if(
 			$remote
@@ -147,7 +147,7 @@ class BCC_Login_Updater {
 		) {
 			$res->new_version = $remote->version;
 			$res->tested = $remote->tested;
-			$res->package = "https://github.com/bcc-code/bcc-wp/releases/download/" . $this->plugin_slug . "-v" . $remote->version . "/" . $this->plugin_slug . ".zip"; //$remote->download_url;
+			$res->package = "https://github.com/jeroenflietstra/bcc-wp/releases/download/" . $this->plugin_slug . "-v" . $remote->version . "/" . $this->plugin_slug . ".zip"; //$remote->download_url;
 	
 			$transient->response[ $res->plugin ] = $res;
 		} else {
