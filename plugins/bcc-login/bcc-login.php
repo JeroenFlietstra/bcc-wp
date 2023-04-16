@@ -121,7 +121,7 @@ class BCC_Login {
                     }
                 }
                 if (should_login) {
-                    document.location.href = "/login";
+                    document.location.href = "/authenticate";
                 }
             </script>' . PHP_EOL;
         }
